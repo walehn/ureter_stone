@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python test_implementation.py:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(python run_analysis.py:*)",
+      "Bash(pip install:*)",
+      "Bash(python3:*)",
+      "Bash(tee:*)",
+      "Bash(done)",
+      "Bash(chmod:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  },
+  "outputStyle": "Explanatory"
+}

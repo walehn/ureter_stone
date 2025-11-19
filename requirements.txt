@@ -1,0 +1,21 @@
+# 요관 결석 탐지 AI 성능 분석 시스템
+# Python 3.9+ 필요
+
+# Excel 파일 처리
+openpyxl>=3.0.0
+
+# 수치 계산
+numpy>=1.21.0,<1.22.0  # pandas 충돌 방지를 위해 1.21.x 사용
+scipy>=1.7.0
+
+# 시각화
+matplotlib>=3.5.0
+
+# 참고:
+# - pandas는 의도적으로 제외 (numpy 버전 충돌 방지)
+# - statsmodels는 제외 (GEE 직접 구현)
+# - 모든 데이터 처리는 openpyxl + 순수 Python으로 구현
+
+# 선택적 (개발/테스트용)
+# pytest>=7.0.0
+# black>=23.0.0

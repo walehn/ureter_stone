@@ -1,0 +1,4 @@
+Strategy,TP,FP,FN,Precision,Recall,F1_Score
+Assisted (With AI),230,72,174,0.7616,0.5693,0.6516
+Unaided (Without AI),204,262,200,0.4378,0.5050,0.4690
+Δ (Assisted - Unaided),+26,-190,-26,+0.3238,+0.0644,+0.1826

@@ -1,0 +1,113 @@
+{
+  "BCR": {
+    "n_patients": 324,
+    "unaided": {
+      "confusion_matrix": {
+        "TP": 110,
+        "FP": 36,
+        "TN": 109,
+        "FN": 66
+      },
+      "metrics": {
+        "sensitivity": 0.625,
+        "specificity": 0.7517241379310344,
+        "ppv": 0.7534246575342466,
+        "npv": 0.6228571428571429
+      }
+    },
+    "assisted": {
+      "confusion_matrix": {
+        "TP": 111,
+        "FP": 21,
+        "TN": 113,
+        "FN": 76
+      },
+      "metrics": {
+        "sensitivity": 0.5935828877005348,
+        "specificity": 0.8432835820895522,
+        "ppv": 0.8409090909090909,
+        "npv": 0.5978835978835979
+      }
+    },
+    "deltas": {
+      "delta_sensitivity": -0.0314171122994652,
+      "delta_specificity": 0.0915594441585178,
+      "delta_ppv": 0.08748443337484435,
+      "delta_npv": -0.02497354497354498
+    }
+  },
+  "EMS": {
+    "n_patients": 324,
+    "unaided": {
+      "confusion_matrix": {
+        "TP": 123,
+        "FP": 139,
+        "TN": 36,
+        "FN": 23
+      },
+      "metrics": {
+        "sensitivity": 0.8424657534246576,
+        "specificity": 0.2057142857142857,
+        "ppv": 0.46946564885496184,
+        "npv": 0.6101694915254238
+      }
+    },
+    "assisted": {
+      "confusion_matrix": {
+        "TP": 126,
+        "FP": 56,
+        "TN": 92,
+        "FN": 47
+      },
+      "metrics": {
+        "sensitivity": 0.7283236994219653,
+        "specificity": 0.6216216216216216,
+        "ppv": 0.6923076923076923,
+        "npv": 0.6618705035971223
+      }
+    },
+    "deltas": {
+      "delta_sensitivity": -0.11414205400269228,
+      "delta_specificity": 0.41590733590733586,
+      "delta_ppv": 0.22284204345273045,
+      "delta_npv": 0.05170101207169853
+    }
+  },
+  "Resident": {
+    "n_patients": 324,
+    "unaided": {
+      "confusion_matrix": {
+        "TP": 99,
+        "FP": 63,
+        "TN": 94,
+        "FN": 65
+      },
+      "metrics": {
+        "sensitivity": 0.6036585365853658,
+        "specificity": 0.5987261146496815,
+        "ppv": 0.6111111111111112,
+        "npv": 0.5911949685534591
+      }
+    },
+    "assisted": {
+      "confusion_matrix": {
+        "TP": 112,
+        "FP": 25,
+        "TN": 111,
+        "FN": 73
+      },
+      "metrics": {
+        "sensitivity": 0.6054054054054054,
+        "specificity": 0.8161764705882353,
+        "ppv": 0.8175182481751825,
+        "npv": 0.6032608695652174
+      }
+    },
+    "deltas": {
+      "delta_sensitivity": 0.0017468688200396043,
+      "delta_specificity": 0.21745035593855377,
+      "delta_ppv": 0.20640713706407132,
+      "delta_npv": 0.012065901011758307
+    }
+  }
+}

@@ -1,0 +1,64 @@
+# Analysis Configuration for Ureter Stone Detection Study
+# 요관 결석 탐지 AI 성능 분석 시스템 설정
+
+# 입력 데이터 경로
+data:
+  bcr_file: "BCR_result.xlsx"
+  ems_file: "EMS_result.xlsx"
+  resident_file: "Resident_result.xlsx"
+
+# 분석 파라미터
+analysis:
+  # Bootstrap 설정 (FR-04)
+  bootstrap:
+    n_iterations: 1000  # Bootstrap 반복 횟수 (≥1000)
+    random_seed: 42     # 재현성을 위한 시드
+    confidence_level: 0.95  # 95% CI
+
+  # Decision Curve Analysis 설정 (FR-05)
+  dca:
+    threshold_min: 0.05  # 최소 임계값
+    threshold_max: 0.25  # 최대 임계값
+    n_points: 50         # Grid 포인트 수
+
+  # GEE 설정 (FR-05)
+  gee:
+    family: "binomial"        # Binomial family
+    link: "logit"             # Logit link
+    correlation: "exchangeable"  # Exchangeable correlation
+    include_reader_id: false  # Reader ID를 fixed effect로 포함할지 여부
+
+# 출력 설정
+output:
+  directory: "./results"
+
+  # 출력 형식
+  formats:
+    - "csv"
+    - "png"
+    - "json"
+    - "markdown"
+
+  # 그래프 설정
+  figures:
+    dpi: 300  # 해상도 (논문 제출 품질)
+    format: "png"
+    style: "seaborn-v0_8-whitegrid"  # Matplotlib style
+
+    # Color-blind friendly palette
+    colors:
+      assisted: "#0173B2"    # Blue
+      unaided: "#DE8F05"     # Orange
+      positive: "#029E73"    # Green
+      negative: "#D55E00"    # Red
+
+# 로깅 설정
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file: "analysis.log"
+
+# 성능 요구사항 (검증용)
+performance:
+  bootstrap_max_time: 300  # Bootstrap 최대 시간 (초, 5분)
+  gee_max_time: 1          # GEE fitting 최대 시간 (초)
+  lesion_matching_max_time: 1  # Lesion matching 최대 시간 (초, 1000개 기준)

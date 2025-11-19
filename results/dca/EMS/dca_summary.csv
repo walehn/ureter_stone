@@ -1,0 +1,6 @@
+Threshold,NB_Assisted,NB_Unaided,NB_Treat_All,NB_Treat_None,Delta_NB,Better_Strategy
+0.05,0.3833,0.3604,0.5147,0.0000,+0.0230,Assisted
+0.10,0.3734,0.3356,0.4883,0.0000,+0.0378,Assisted
+0.15,0.3622,0.3080,0.4589,0.0000,+0.0542,Assisted
+0.20,0.3486,0.2742,0.4229,0.0000,+0.0744,Assisted
+0.25,0.3344,0.2388,0.3853,0.0000,+0.0955,Assisted

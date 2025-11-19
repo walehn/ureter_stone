@@ -1,0 +1,208 @@
+/home/abdomen/ureter_stone/src/gee_analysis.py:17: UserWarning: A NumPy version >=1.22.4 and <2.3.0 is required for this version of SciPy (detected version 1.21.6)
+  from scipy import optimize
+================================================================================
+요관 결석 탐지 AI GEE 분석 - Cluster-robust Inference
+================================================================================
+
+[1] GEE 분석 실행...
+--------------------------------------------------------------------------------
+2025-11-16 16:53:11 [INFO] gee_analysis: [BCR] 데이터 로딩 완료:
+2025-11-16 16:53:11 [INFO] gee_analysis:   Total records: 650 (unaided + assisted)
+2025-11-16 16:53:11 [INFO] gee_analysis:   Unique patients: 160
+2025-11-16 16:53:11 [INFO] gee_analysis:   Outcome distribution: 447/650 correct
+
+================================================================================
+[BCR] GEE Analysis
+================================================================================
+2025-11-16 16:53:11 [INFO] src.gee_analysis: GEE Analyzer 초기화: max_iter=100, tol=1e-06
+2025-11-16 16:53:11 [INFO] src.gee_analysis: ================================================================================
+2025-11-16 16:53:11 [INFO] src.gee_analysis: GEE 분석 시작
+2025-11-16 16:53:11 [INFO] src.gee_analysis: ================================================================================
+2025-11-16 16:53:11 [INFO] src.gee_analysis: 데이터 준비 완료: n=650, p=2, clusters=321
+2025-11-16 16:53:11 [INFO] src.gee_analysis:   Mean cluster size: 2.0 (range: 2-4)
+2025-11-16 16:53:11 [INFO] src.gee_analysis: 
+[Step 1] Logistic Regression (초기 추정)...
+2025-11-16 16:53:11 [INFO] src.gee_analysis: 
+[Step 2] Working Correlation 추정...
+2025-11-16 16:53:11 [INFO] src.gee_analysis:   Working correlation (exchangeable): α=0.101
+2025-11-16 16:53:11 [INFO] src.gee_analysis: 
+[Step 3] Robust Standard Errors 계산...
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+================================================================================
+2025-11-16 16:53:12 [INFO] src.gee_analysis: GEE 결과
+2025-11-16 16:53:12 [INFO] src.gee_analysis: ================================================================================
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+Model: Binomial family, Logit link, Exchangeable correlation
+2025-11-16 16:53:12 [INFO] src.gee_analysis: N observations: 650, N clusters: 321
+2025-11-16 16:53:12 [INFO] src.gee_analysis: Working correlation: α=0.101
+
+2025-11-16 16:53:12 [INFO] src.gee_analysis: Coefficients:
+2025-11-16 16:53:12 [INFO] src.gee_analysis: --------------------------------------------------------------------------------
+2025-11-16 16:53:12 [INFO] src.gee_analysis: Variable                             Beta         SE          z      P>|z|         OR
+2025-11-16 16:53:12 [INFO] src.gee_analysis: --------------------------------------------------------------------------------
+2025-11-16 16:53:12 [INFO] src.gee_analysis: Intercept                          0.7538     0.1185      6.360     0.0000      2.125 ***
+2025-11-16 16:53:12 [INFO] src.gee_analysis: Mode (Assisted vs Unaided)         0.0716     0.1190      0.602     0.5471      1.074 
+2025-11-16 16:53:12 [INFO] src.gee_analysis: --------------------------------------------------------------------------------
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+95% Confidence Intervals:
+2025-11-16 16:53:12 [INFO] src.gee_analysis:   Intercept:
+2025-11-16 16:53:12 [INFO] src.gee_analysis:     Beta: [0.5215, 0.9861]
+2025-11-16 16:53:12 [INFO] src.gee_analysis:     OR:   [1.6845, 2.6807]
+2025-11-16 16:53:12 [INFO] src.gee_analysis:   Mode (Assisted vs Unaided):
+2025-11-16 16:53:12 [INFO] src.gee_analysis:     Beta: [-0.1616, 0.3048]
+2025-11-16 16:53:12 [INFO] src.gee_analysis:     OR:   [0.8508, 1.3564]
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+GEE 분석 완료!
+2025-11-16 16:53:12 [INFO] src.gee_analysis: ✓ JSON 저장: results/gee/BCR/gee_results.json
+2025-11-16 16:53:12 [INFO] src.gee_analysis: ✓ CSV 저장: results/gee/BCR/gee_coefficients.csv
+2025-11-16 16:53:12 [INFO] src.gee_analysis: ✓ Markdown 저장: results/gee/BCR/gee_report.md
+
+✓ BCR GEE 분석 완료!
+  결과 저장: results/gee/BCR/
+2025-11-16 16:53:12 [INFO] gee_analysis: [EMS] 데이터 로딩 완료:
+2025-11-16 16:53:12 [INFO] gee_analysis:   Total records: 650 (unaided + assisted)
+2025-11-16 16:53:12 [INFO] gee_analysis:   Unique patients: 160
+2025-11-16 16:53:12 [INFO] gee_analysis:   Outcome distribution: 382/650 correct
+
+================================================================================
+[EMS] GEE Analysis
+================================================================================
+2025-11-16 16:53:12 [INFO] src.gee_analysis: GEE Analyzer 초기화: max_iter=100, tol=1e-06
+2025-11-16 16:53:12 [INFO] src.gee_analysis: ================================================================================
+2025-11-16 16:53:12 [INFO] src.gee_analysis: GEE 분석 시작
+2025-11-16 16:53:12 [INFO] src.gee_analysis: ================================================================================
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 데이터 준비 완료: n=650, p=2, clusters=321
+2025-11-16 16:53:12 [INFO] src.gee_analysis:   Mean cluster size: 2.0 (range: 2-4)
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+[Step 1] Logistic Regression (초기 추정)...
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+[Step 2] Working Correlation 추정...
+2025-11-16 16:53:12 [INFO] src.gee_analysis:   Working correlation (exchangeable): α=0.082
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+[Step 3] Robust Standard Errors 계산...
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+================================================================================
+2025-11-16 16:53:12 [INFO] src.gee_analysis: GEE 결과
+2025-11-16 16:53:12 [INFO] src.gee_analysis: ================================================================================
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+Model: Binomial family, Logit link, Exchangeable correlation
+2025-11-16 16:53:12 [INFO] src.gee_analysis: N observations: 650, N clusters: 321
+2025-11-16 16:53:12 [INFO] src.gee_analysis: Working correlation: α=0.082
+
+2025-11-16 16:53:12 [INFO] src.gee_analysis: Coefficients:
+2025-11-16 16:53:12 [INFO] src.gee_analysis: --------------------------------------------------------------------------------
+2025-11-16 16:53:12 [INFO] src.gee_analysis: Variable                             Beta         SE          z      P>|z|         OR
+2025-11-16 16:53:12 [INFO] src.gee_analysis: --------------------------------------------------------------------------------
+2025-11-16 16:53:12 [INFO] src.gee_analysis: Intercept                         -0.0185     0.1109     -0.166     0.8678      0.982 
+2025-11-16 16:53:12 [INFO] src.gee_analysis: Mode (Assisted vs Unaided)         0.7722     0.1293      5.971     0.0000      2.165 ***
+2025-11-16 16:53:12 [INFO] src.gee_analysis: --------------------------------------------------------------------------------
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+95% Confidence Intervals:
+2025-11-16 16:53:12 [INFO] src.gee_analysis:   Intercept:
+2025-11-16 16:53:12 [INFO] src.gee_analysis:     Beta: [-0.2359, 0.1990]
+2025-11-16 16:53:12 [INFO] src.gee_analysis:     OR:   [0.7898, 1.2202]
+2025-11-16 16:53:12 [INFO] src.gee_analysis:   Mode (Assisted vs Unaided):
+2025-11-16 16:53:12 [INFO] src.gee_analysis:     Beta: [0.5187, 1.0257]
+2025-11-16 16:53:12 [INFO] src.gee_analysis:     OR:   [1.6799, 2.7892]
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+GEE 분석 완료!
+2025-11-16 16:53:12 [INFO] src.gee_analysis: ✓ JSON 저장: results/gee/EMS/gee_results.json
+2025-11-16 16:53:12 [INFO] src.gee_analysis: ✓ CSV 저장: results/gee/EMS/gee_coefficients.csv
+2025-11-16 16:53:12 [INFO] src.gee_analysis: ✓ Markdown 저장: results/gee/EMS/gee_report.md
+
+✓ EMS GEE 분석 완료!
+  결과 저장: results/gee/EMS/
+2025-11-16 16:53:12 [INFO] gee_analysis: [Resident] 데이터 로딩 완료:
+2025-11-16 16:53:12 [INFO] gee_analysis:   Total records: 650 (unaided + assisted)
+2025-11-16 16:53:12 [INFO] gee_analysis:   Unique patients: 160
+2025-11-16 16:53:12 [INFO] gee_analysis:   Outcome distribution: 422/650 correct
+
+================================================================================
+[Resident] GEE Analysis
+================================================================================
+2025-11-16 16:53:12 [INFO] src.gee_analysis: GEE Analyzer 초기화: max_iter=100, tol=1e-06
+2025-11-16 16:53:12 [INFO] src.gee_analysis: ================================================================================
+2025-11-16 16:53:12 [INFO] src.gee_analysis: GEE 분석 시작
+2025-11-16 16:53:12 [INFO] src.gee_analysis: ================================================================================
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 데이터 준비 완료: n=650, p=2, clusters=321
+2025-11-16 16:53:12 [INFO] src.gee_analysis:   Mean cluster size: 2.0 (range: 2-4)
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+[Step 1] Logistic Regression (초기 추정)...
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+[Step 2] Working Correlation 추정...
+2025-11-16 16:53:12 [INFO] src.gee_analysis:   Working correlation (exchangeable): α=0.134
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+[Step 3] Robust Standard Errors 계산...
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+================================================================================
+2025-11-16 16:53:12 [INFO] src.gee_analysis: GEE 결과
+2025-11-16 16:53:12 [INFO] src.gee_analysis: ================================================================================
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+Model: Binomial family, Logit link, Exchangeable correlation
+2025-11-16 16:53:12 [INFO] src.gee_analysis: N observations: 650, N clusters: 321
+2025-11-16 16:53:12 [INFO] src.gee_analysis: Working correlation: α=0.134
+
+2025-11-16 16:53:12 [INFO] src.gee_analysis: Coefficients:
+2025-11-16 16:53:12 [INFO] src.gee_analysis: --------------------------------------------------------------------------------
+2025-11-16 16:53:12 [INFO] src.gee_analysis: Variable                             Beta         SE          z      P>|z|         OR
+2025-11-16 16:53:12 [INFO] src.gee_analysis: --------------------------------------------------------------------------------
+2025-11-16 16:53:12 [INFO] src.gee_analysis: Intercept                          0.4183     0.1131      3.697     0.0002      1.519 ***
+2025-11-16 16:53:12 [INFO] src.gee_analysis: Mode (Assisted vs Unaided)         0.4071     0.1015      4.011     0.0001      1.502 ***
+2025-11-16 16:53:12 [INFO] src.gee_analysis: --------------------------------------------------------------------------------
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+95% Confidence Intervals:
+2025-11-16 16:53:12 [INFO] src.gee_analysis:   Intercept:
+2025-11-16 16:53:12 [INFO] src.gee_analysis:     Beta: [0.1966, 0.6401]
+2025-11-16 16:53:12 [INFO] src.gee_analysis:     OR:   [1.2172, 1.8966]
+2025-11-16 16:53:12 [INFO] src.gee_analysis:   Mode (Assisted vs Unaided):
+2025-11-16 16:53:12 [INFO] src.gee_analysis:     Beta: [0.2082, 0.6060]
+2025-11-16 16:53:12 [INFO] src.gee_analysis:     OR:   [1.2314, 1.8332]
+2025-11-16 16:53:12 [INFO] src.gee_analysis: 
+GEE 분석 완료!
+2025-11-16 16:53:12 [INFO] src.gee_analysis: ✓ JSON 저장: results/gee/Resident/gee_results.json
+2025-11-16 16:53:12 [INFO] src.gee_analysis: ✓ CSV 저장: results/gee/Resident/gee_coefficients.csv
+2025-11-16 16:53:12 [INFO] src.gee_analysis: ✓ Markdown 저장: results/gee/Resident/gee_report.md
+
+✓ Resident GEE 분석 완료!
+  결과 저장: results/gee/Resident/
+
+================================================================================
+[2] 전체 리더 GEE 결과 요약
+================================================================================
+
+[BCR]
+--------------------------------------------------------------------------------
+  AI Assistance Effect:
+    Beta:      +0.0716 (SE: 0.1190)
+    z-score:   +0.602
+    p-value:   0.5471 
+    OR:        1.074 (95% CI: [0.851, 1.356])
+    → AI assistance increases odds of correct classification by 7.4%
+
+[EMS]
+--------------------------------------------------------------------------------
+  AI Assistance Effect:
+    Beta:      +0.7722 (SE: 0.1293)
+    z-score:   +5.971
+    p-value:   0.0000 ***
+    OR:        2.165 (95% CI: [1.680, 2.789])
+    → AI assistance increases odds of correct classification by 116.5%
+
+[Resident]
+--------------------------------------------------------------------------------
+  AI Assistance Effect:
+    Beta:      +0.4071 (SE: 0.1015)
+    z-score:   +4.011
+    p-value:   0.0001 ***
+    OR:        1.502 (95% CI: [1.231, 1.833])
+    → AI assistance increases odds of correct classification by 50.2%
+
+================================================================================
+GEE 분석 완료!
+================================================================================
+
+📊 주요 발견사항:
+  - Cluster-robust inference (환자 내 상관관계 고려)
+  - Exchangeable correlation structure
+  - Sandwich (robust) standard errors
+  - 결과 저장: results/gee/

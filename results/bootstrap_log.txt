@@ -1,0 +1,253 @@
+================================================================================
+요관 결석 탐지 AI Bootstrap 분석 - Patient-level Cluster-robust
+================================================================================
+
+[1] 데이터 로딩 및 변환...
+--------------------------------------------------------------------------------
+2025-11-14 16:21:00 [INFO] bootstrap_analysis: [BCR] 데이터 로딩 완료:
+2025-11-14 16:21:00 [INFO] bootstrap_analysis:   Unaided: 325개 레코드, 321명 환자
+2025-11-14 16:21:00 [INFO] bootstrap_analysis:   Assisted: 325개 레코드, 321명 환자
+
+[2] Bootstrap 분석 실행: BCR
+--------------------------------------------------------------------------------
+2025-11-14 16:21:00 [INFO] src.bootstrap: Bootstrap Analyzer 초기화: B=1000, CI=95.0%, seed=42
+2025-11-14 16:21:00 [INFO] src.bootstrap: ================================================================================
+2025-11-14 16:21:00 [INFO] src.bootstrap: Bootstrap 비교 분석 시작: Assisted vs Unaided
+2025-11-14 16:21:00 [INFO] src.bootstrap: ================================================================================
+2025-11-14 16:21:00 [INFO] src.bootstrap: Bootstrap 분석 시작: mode=assisted, B=1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 100/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 200/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 300/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 400/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 500/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 600/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 700/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 800/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 900/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 1000/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   sensitivity: 0.596 (95% CI: 0.544-0.646)
+2025-11-14 16:21:00 [INFO] src.bootstrap:   specificity: 0.843 (95% CI: 0.800-0.890)
+2025-11-14 16:21:00 [INFO] src.bootstrap:   ppv: 0.841 (95% CI: 0.797-0.889)
+2025-11-14 16:21:00 [INFO] src.bootstrap:   npv: 0.599 (95% CI: 0.545-0.652)
+2025-11-14 16:21:00 [INFO] src.bootstrap: Bootstrap 분석 완료: assisted
+2025-11-14 16:21:00 [INFO] src.bootstrap: Bootstrap 분석 시작: mode=unaided, B=1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 100/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 200/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 300/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 400/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 500/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 600/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 700/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 800/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 900/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 1000/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   sensitivity: 0.626 (95% CI: 0.569-0.682)
+2025-11-14 16:21:00 [INFO] src.bootstrap:   specificity: 0.751 (95% CI: 0.701-0.809)
+2025-11-14 16:21:00 [INFO] src.bootstrap:   ppv: 0.753 (95% CI: 0.699-0.806)
+2025-11-14 16:21:00 [INFO] src.bootstrap:   npv: 0.623 (95% CI: 0.571-0.679)
+2025-11-14 16:21:00 [INFO] src.bootstrap: Bootstrap 분석 완료: unaided
+2025-11-14 16:21:00 [INFO] src.bootstrap: 
+Delta 계산 (Assisted - Unaided):
+2025-11-14 16:21:00 [INFO] src.bootstrap:   sensitivity: Δ=-0.030 (95% CI: -0.101 to +0.041) p≈0.209 
+2025-11-14 16:21:00 [INFO] src.bootstrap:   specificity: Δ=+0.092 (95% CI: +0.016 to +0.165) p≈0.015 **
+2025-11-14 16:21:00 [INFO] src.bootstrap:   ppv: Δ=+0.088 (95% CI: +0.011 to +0.161) p≈0.013 **
+2025-11-14 16:21:00 [INFO] src.bootstrap:   npv: Δ=-0.024 (95% CI: -0.101 to +0.052) p≈0.270 
+2025-11-14 16:21:00 [ERROR] bootstrap_analysis: ✗ BCR 처리 실패: Object of type bool_ is not JSON serializable
+Traceback (most recent call last):
+  File "/home/abdomen/ureter_stone/run_bootstrap_analysis.py", line 144, in <module>
+    analyzer.export_results(output_dir)
+  File "/home/abdomen/ureter_stone/src/bootstrap.py", line 417, in export_results
+    json.dump(self.bootstrap_results, f, indent=2, ensure_ascii=False)
+  File "/home/miruware/anaconda3/lib/python3.9/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  [Previous line repeated 1 more time]
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool_ is not JSON serializable
+2025-11-14 16:21:00 [INFO] bootstrap_analysis: [EMS] 데이터 로딩 완료:
+2025-11-14 16:21:00 [INFO] bootstrap_analysis:   Unaided: 325개 레코드, 321명 환자
+2025-11-14 16:21:00 [INFO] bootstrap_analysis:   Assisted: 325개 레코드, 321명 환자
+
+[2] Bootstrap 분석 실행: EMS
+--------------------------------------------------------------------------------
+2025-11-14 16:21:00 [INFO] src.bootstrap: Bootstrap Analyzer 초기화: B=1000, CI=95.0%, seed=42
+2025-11-14 16:21:00 [INFO] src.bootstrap: ================================================================================
+2025-11-14 16:21:00 [INFO] src.bootstrap: Bootstrap 비교 분석 시작: Assisted vs Unaided
+2025-11-14 16:21:00 [INFO] src.bootstrap: ================================================================================
+2025-11-14 16:21:00 [INFO] src.bootstrap: Bootstrap 분석 시작: mode=assisted, B=1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 100/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 200/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 300/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 400/1000
+2025-11-14 16:21:00 [INFO] src.bootstrap:   Bootstrap iteration: 500/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 600/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 700/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 800/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 900/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 1000/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   sensitivity: 0.730 (95% CI: 0.681-0.780)
+2025-11-14 16:21:01 [INFO] src.bootstrap:   specificity: 0.621 (95% CI: 0.565-0.678)
+2025-11-14 16:21:01 [INFO] src.bootstrap:   ppv: 0.692 (95% CI: 0.645-0.741)
+2025-11-14 16:21:01 [INFO] src.bootstrap:   npv: 0.663 (95% CI: 0.603-0.722)
+2025-11-14 16:21:01 [INFO] src.bootstrap: Bootstrap 분석 완료: assisted
+2025-11-14 16:21:01 [INFO] src.bootstrap: Bootstrap 분석 시작: mode=unaided, B=1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 100/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 200/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 300/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 400/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 500/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 600/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 700/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 800/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 900/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 1000/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   sensitivity: 0.844 (95% CI: 0.798-0.889)
+2025-11-14 16:21:01 [INFO] src.bootstrap:   specificity: 0.208 (95% CI: 0.159-0.252)
+2025-11-14 16:21:01 [INFO] src.bootstrap:   ppv: 0.474 (95% CI: 0.427-0.521)
+2025-11-14 16:21:01 [INFO] src.bootstrap:   npv: 0.611 (95% CI: 0.515-0.703)
+2025-11-14 16:21:01 [INFO] src.bootstrap: Bootstrap 분석 완료: unaided
+2025-11-14 16:21:01 [INFO] src.bootstrap: 
+Delta 계산 (Assisted - Unaided):
+2025-11-14 16:21:01 [INFO] src.bootstrap:   sensitivity: Δ=-0.115 (95% CI: -0.184 to -0.044) p≈0.001 **
+2025-11-14 16:21:01 [INFO] src.bootstrap:   specificity: Δ=+0.413 (95% CI: +0.342 to +0.491) p≈0.000 **
+2025-11-14 16:21:01 [INFO] src.bootstrap:   ppv: Δ=+0.218 (95% CI: +0.154 to +0.288) p≈0.000 **
+2025-11-14 16:21:01 [INFO] src.bootstrap:   npv: Δ=+0.051 (95% CI: -0.061 to +0.170) p≈0.192 
+2025-11-14 16:21:01 [ERROR] bootstrap_analysis: ✗ EMS 처리 실패: Object of type bool_ is not JSON serializable
+Traceback (most recent call last):
+  File "/home/abdomen/ureter_stone/run_bootstrap_analysis.py", line 144, in <module>
+    analyzer.export_results(output_dir)
+  File "/home/abdomen/ureter_stone/src/bootstrap.py", line 417, in export_results
+    json.dump(self.bootstrap_results, f, indent=2, ensure_ascii=False)
+  File "/home/miruware/anaconda3/lib/python3.9/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  [Previous line repeated 1 more time]
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool_ is not JSON serializable
+2025-11-14 16:21:01 [INFO] bootstrap_analysis: [Resident] 데이터 로딩 완료:
+2025-11-14 16:21:01 [INFO] bootstrap_analysis:   Unaided: 325개 레코드, 321명 환자
+2025-11-14 16:21:01 [INFO] bootstrap_analysis:   Assisted: 325개 레코드, 321명 환자
+
+[2] Bootstrap 분석 실행: Resident
+--------------------------------------------------------------------------------
+2025-11-14 16:21:01 [INFO] src.bootstrap: Bootstrap Analyzer 초기화: B=1000, CI=95.0%, seed=42
+2025-11-14 16:21:01 [INFO] src.bootstrap: ================================================================================
+2025-11-14 16:21:01 [INFO] src.bootstrap: Bootstrap 비교 분석 시작: Assisted vs Unaided
+2025-11-14 16:21:01 [INFO] src.bootstrap: ================================================================================
+2025-11-14 16:21:01 [INFO] src.bootstrap: Bootstrap 분석 시작: mode=assisted, B=1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 100/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 200/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 300/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 400/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 500/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 600/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 700/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 800/1000
+2025-11-14 16:21:01 [INFO] src.bootstrap:   Bootstrap iteration: 900/1000
+2025-11-14 16:21:02 [INFO] src.bootstrap:   Bootstrap iteration: 1000/1000
+2025-11-14 16:21:02 [INFO] src.bootstrap:   sensitivity: 0.606 (95% CI: 0.554-0.656)
+2025-11-14 16:21:02 [INFO] src.bootstrap:   specificity: 0.816 (95% CI: 0.767-0.864)
+2025-11-14 16:21:02 [INFO] src.bootstrap:   ppv: 0.817 (95% CI: 0.769-0.866)
+2025-11-14 16:21:02 [INFO] src.bootstrap:   npv: 0.604 (95% CI: 0.548-0.661)
+2025-11-14 16:21:02 [INFO] src.bootstrap: Bootstrap 분석 완료: assisted
+2025-11-14 16:21:02 [INFO] src.bootstrap: Bootstrap 분석 시작: mode=unaided, B=1000
+2025-11-14 16:21:02 [INFO] src.bootstrap:   Bootstrap iteration: 100/1000
+2025-11-14 16:21:02 [INFO] src.bootstrap:   Bootstrap iteration: 200/1000
+2025-11-14 16:21:02 [INFO] src.bootstrap:   Bootstrap iteration: 300/1000
+2025-11-14 16:21:02 [INFO] src.bootstrap:   Bootstrap iteration: 400/1000
+2025-11-14 16:21:02 [INFO] src.bootstrap:   Bootstrap iteration: 500/1000
+2025-11-14 16:21:02 [INFO] src.bootstrap:   Bootstrap iteration: 600/1000
+2025-11-14 16:21:02 [INFO] src.bootstrap:   Bootstrap iteration: 700/1000
+2025-11-14 16:21:02 [INFO] src.bootstrap:   Bootstrap iteration: 800/1000
+2025-11-14 16:21:02 [INFO] src.bootstrap:   Bootstrap iteration: 900/1000
+2025-11-14 16:21:02 [INFO] src.bootstrap:   Bootstrap iteration: 1000/1000
+2025-11-14 16:21:02 [INFO] src.bootstrap:   sensitivity: 0.612 (95% CI: 0.557-0.670)
+2025-11-14 16:21:02 [INFO] src.bootstrap:   specificity: 0.600 (95% CI: 0.544-0.656)
+2025-11-14 16:21:02 [INFO] src.bootstrap:   ppv: 0.616 (95% CI: 0.561-0.673)
+2025-11-14 16:21:02 [INFO] src.bootstrap:   npv: 0.596 (95% CI: 0.536-0.657)
+2025-11-14 16:21:02 [INFO] src.bootstrap: Bootstrap 분석 완료: unaided
+2025-11-14 16:21:02 [INFO] src.bootstrap: 
+Delta 계산 (Assisted - Unaided):
+2025-11-14 16:21:02 [INFO] src.bootstrap:   sensitivity: Δ=-0.005 (95% CI: -0.085 to +0.065) p≈0.471 
+2025-11-14 16:21:02 [INFO] src.bootstrap:   specificity: Δ=+0.215 (95% CI: +0.141 to +0.297) p≈0.000 **
+2025-11-14 16:21:02 [INFO] src.bootstrap:   ppv: Δ=+0.201 (95% CI: +0.128 to +0.275) p≈0.000 **
+2025-11-14 16:21:02 [INFO] src.bootstrap:   npv: Δ=+0.008 (95% CI: -0.074 to +0.092) p≈0.440 
+2025-11-14 16:21:02 [ERROR] bootstrap_analysis: ✗ Resident 처리 실패: Object of type bool_ is not JSON serializable
+Traceback (most recent call last):
+  File "/home/abdomen/ureter_stone/run_bootstrap_analysis.py", line 144, in <module>
+    analyzer.export_results(output_dir)
+  File "/home/abdomen/ureter_stone/src/bootstrap.py", line 417, in export_results
+    json.dump(self.bootstrap_results, f, indent=2, ensure_ascii=False)
+  File "/home/miruware/anaconda3/lib/python3.9/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  [Previous line repeated 1 more time]
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/home/miruware/anaconda3/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool_ is not JSON serializable
+
+================================================================================
+[3] 전체 리더 비교 요약
+================================================================================
+
+[BCR]
+--------------------------------------------------------------------------------
+  Δ SENSITIVITY : -0.030 (95% CI: [-0.101, +0.041])
+  Δ SPECIFICITY : +0.092 (95% CI: [+0.016, +0.165]) **
+  Δ PPV         : +0.088 (95% CI: [+0.011, +0.161]) **
+  Δ NPV         : -0.024 (95% CI: [-0.101, +0.052])
+
+[EMS]
+--------------------------------------------------------------------------------
+  Δ SENSITIVITY : -0.115 (95% CI: [-0.184, -0.044]) **
+  Δ SPECIFICITY : +0.413 (95% CI: [+0.342, +0.491]) **
+  Δ PPV         : +0.218 (95% CI: [+0.154, +0.288]) **
+  Δ NPV         : +0.051 (95% CI: [-0.061, +0.170])
+
+[Resident]
+--------------------------------------------------------------------------------
+  Δ SENSITIVITY : -0.005 (95% CI: [-0.085, +0.065])
+  Δ SPECIFICITY : +0.215 (95% CI: [+0.141, +0.297]) **
+  Δ PPV         : +0.201 (95% CI: [+0.128, +0.275]) **
+  Δ NPV         : +0.008 (95% CI: [-0.074, +0.092])
+
+✓ 전체 요약 저장: results/bootstrap/all_readers_summary.csv
+
+================================================================================
+Bootstrap 분석 완료!
+================================================================================
+
+📊 주요 발견사항:
+  - Bootstrap iterations: 1000회
+  - Confidence level: 95%
+  - Resampling 단위: Patient-level (cluster-robust)
+  - 결과 저장: results/bootstrap/

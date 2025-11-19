@@ -1,0 +1,27 @@
+{
+  "assisted": {
+    "precision": 0.7615894039735099,
+    "recall": 0.5693069306930693,
+    "f1_score": 0.6515580736543909,
+    "tp": 230,
+    "fp": 72,
+    "fn": 174,
+    "total_detections": 302,
+    "total_ground_truth": 404
+  },
+  "unaided": {
+    "precision": 0.43776824034334766,
+    "recall": 0.504950495049505,
+    "f1_score": 0.46896551724137936,
+    "tp": 204,
+    "fp": 262,
+    "fn": 200,
+    "total_detections": 466,
+    "total_ground_truth": 404
+  },
+  "delta": {
+    "precision": 0.3238211636301623,
+    "recall": 0.0643564356435643,
+    "f1_score": 0.18259255641301153
+  }
+}

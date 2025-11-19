@@ -1,0 +1,179 @@
+================================================================================
+요관 결석 탐지 AI Decision Curve Analysis - Clinical Utility
+================================================================================
+
+[1] Decision Curve Analysis 실행...
+--------------------------------------------------------------------------------
+2025-11-16 17:02:13 [INFO] dca_analysis: [BCR] Confusion matrices 로딩 완료:
+2025-11-16 17:02:13 [INFO] dca_analysis:   Unaided: TP=110, FP=36, FN=66, TN=109
+2025-11-16 17:02:13 [INFO] dca_analysis:   Assisted: TP=111, FP=21, FN=76, TN=113
+
+================================================================================
+[BCR] Decision Curve Analysis
+================================================================================
+2025-11-16 17:02:13 [INFO] src.dca: DCA Analyzer 초기화: threshold range=[0.05, 0.25], n=50
+2025-11-16 17:02:13 [INFO] src.dca: ================================================================================
+2025-11-16 17:02:13 [INFO] src.dca: Decision Curve Analysis: Assisted vs Unaided
+2025-11-16 17:02:13 [INFO] src.dca: ================================================================================
+2025-11-16 17:02:13 [INFO] src.dca: 
+[Assisted (With AI)] DCA 분석 완료:
+2025-11-16 17:02:13 [INFO] src.dca:   Prevalence: 0.583
+2025-11-16 17:02:13 [INFO] src.dca:   N: 321
+2025-11-16 17:02:13 [INFO] src.dca:   Max Net Benefit (Model): 0.3424 at threshold=0.050
+2025-11-16 17:02:13 [INFO] src.dca: 
+[Unaided (Without AI)] DCA 분석 완료:
+2025-11-16 17:02:13 [INFO] src.dca:   Prevalence: 0.548
+2025-11-16 17:02:13 [INFO] src.dca:   N: 321
+2025-11-16 17:02:13 [INFO] src.dca:   Max Net Benefit (Model): 0.3368 at threshold=0.050
+2025-11-16 17:02:13 [INFO] src.dca: 
+================================================================================
+2025-11-16 17:02:13 [INFO] src.dca: 비교 요약
+2025-11-16 17:02:13 [INFO] src.dca: ================================================================================
+2025-11-16 17:02:13 [INFO] src.dca: 
+Maximum difference in Net Benefit:
+2025-11-16 17:02:13 [INFO] src.dca:   Δ Net Benefit: +0.0187 at threshold=0.250
+2025-11-16 17:02:13 [INFO] src.dca:   Assisted: 0.3240
+2025-11-16 17:02:13 [INFO] src.dca:   Unaided:  0.3053
+2025-11-16 17:02:13 [INFO] src.dca: 
+AI is better at threshold range: [0.050, 0.250]
+2025-11-16 17:02:13 [INFO] src.dca:   (50/50 thresholds, 100.0%)
+2025-11-16 17:02:13 [INFO] src.dca: ✓ JSON 저장: results/dca/BCR/dca_results.json
+2025-11-16 17:02:13 [INFO] src.dca: ✓ CSV 저장: results/dca/BCR/dca_curve.csv
+2025-11-16 17:02:13 [INFO] src.dca: ✓ Summary CSV 저장: results/dca/BCR/dca_summary.csv
+2025-11-16 17:02:13 [INFO] src.dca: ✓ Markdown 저장: results/dca/BCR/dca_report.md
+
+✓ BCR DCA 분석 완료!
+  결과 저장: results/dca/BCR/
+2025-11-16 17:02:13 [INFO] dca_analysis: [EMS] Confusion matrices 로딩 완료:
+2025-11-16 17:02:13 [INFO] dca_analysis:   Unaided: TP=123, FP=139, FN=23, TN=36
+2025-11-16 17:02:13 [INFO] dca_analysis:   Assisted: TP=126, FP=56, FN=47, TN=92
+
+================================================================================
+[EMS] Decision Curve Analysis
+================================================================================
+2025-11-16 17:02:13 [INFO] src.dca: DCA Analyzer 초기화: threshold range=[0.05, 0.25], n=50
+2025-11-16 17:02:13 [INFO] src.dca: ================================================================================
+2025-11-16 17:02:13 [INFO] src.dca: Decision Curve Analysis: Assisted vs Unaided
+2025-11-16 17:02:13 [INFO] src.dca: ================================================================================
+2025-11-16 17:02:13 [INFO] src.dca: 
+[Assisted (With AI)] DCA 분석 완료:
+2025-11-16 17:02:13 [INFO] src.dca:   Prevalence: 0.539
+2025-11-16 17:02:13 [INFO] src.dca:   N: 321
+2025-11-16 17:02:13 [INFO] src.dca:   Max Net Benefit (Model): 0.3833 at threshold=0.050
+2025-11-16 17:02:13 [INFO] src.dca: 
+[Unaided (Without AI)] DCA 분석 완료:
+2025-11-16 17:02:13 [INFO] src.dca:   Prevalence: 0.455
+2025-11-16 17:02:13 [INFO] src.dca:   N: 321
+2025-11-16 17:02:13 [INFO] src.dca:   Max Net Benefit (Model): 0.3604 at threshold=0.050
+2025-11-16 17:02:13 [INFO] src.dca: 
+================================================================================
+2025-11-16 17:02:13 [INFO] src.dca: 비교 요약
+2025-11-16 17:02:13 [INFO] src.dca: ================================================================================
+2025-11-16 17:02:13 [INFO] src.dca: 
+Maximum difference in Net Benefit:
+2025-11-16 17:02:13 [INFO] src.dca:   Δ Net Benefit: +0.0955 at threshold=0.250
+2025-11-16 17:02:13 [INFO] src.dca:   Assisted: 0.3344
+2025-11-16 17:02:13 [INFO] src.dca:   Unaided:  0.2388
+2025-11-16 17:02:13 [INFO] src.dca: 
+AI is better at threshold range: [0.050, 0.250]
+2025-11-16 17:02:13 [INFO] src.dca:   (50/50 thresholds, 100.0%)
+2025-11-16 17:02:13 [INFO] src.dca: ✓ JSON 저장: results/dca/EMS/dca_results.json
+2025-11-16 17:02:13 [INFO] src.dca: ✓ CSV 저장: results/dca/EMS/dca_curve.csv
+2025-11-16 17:02:13 [INFO] src.dca: ✓ Summary CSV 저장: results/dca/EMS/dca_summary.csv
+2025-11-16 17:02:13 [INFO] src.dca: ✓ Markdown 저장: results/dca/EMS/dca_report.md
+
+✓ EMS DCA 분석 완료!
+  결과 저장: results/dca/EMS/
+2025-11-16 17:02:14 [INFO] dca_analysis: [Resident] Confusion matrices 로딩 완료:
+2025-11-16 17:02:14 [INFO] dca_analysis:   Unaided: TP=99, FP=63, FN=65, TN=94
+2025-11-16 17:02:14 [INFO] dca_analysis:   Assisted: TP=112, FP=25, FN=73, TN=111
+
+================================================================================
+[Resident] Decision Curve Analysis
+================================================================================
+2025-11-16 17:02:14 [INFO] src.dca: DCA Analyzer 초기화: threshold range=[0.05, 0.25], n=50
+2025-11-16 17:02:14 [INFO] src.dca: ================================================================================
+2025-11-16 17:02:14 [INFO] src.dca: Decision Curve Analysis: Assisted vs Unaided
+2025-11-16 17:02:14 [INFO] src.dca: ================================================================================
+2025-11-16 17:02:14 [INFO] src.dca: 
+[Assisted (With AI)] DCA 분석 완료:
+2025-11-16 17:02:14 [INFO] src.dca:   Prevalence: 0.576
+2025-11-16 17:02:14 [INFO] src.dca:   N: 321
+2025-11-16 17:02:14 [INFO] src.dca:   Max Net Benefit (Model): 0.3448 at threshold=0.050
+2025-11-16 17:02:14 [INFO] src.dca: 
+[Unaided (Without AI)] DCA 분석 완료:
+2025-11-16 17:02:14 [INFO] src.dca:   Prevalence: 0.511
+2025-11-16 17:02:14 [INFO] src.dca:   N: 321
+2025-11-16 17:02:14 [INFO] src.dca:   Max Net Benefit (Model): 0.2981 at threshold=0.050
+2025-11-16 17:02:14 [INFO] src.dca: 
+================================================================================
+2025-11-16 17:02:14 [INFO] src.dca: 비교 요약
+2025-11-16 17:02:14 [INFO] src.dca: ================================================================================
+2025-11-16 17:02:14 [INFO] src.dca: 
+Maximum difference in Net Benefit:
+2025-11-16 17:02:14 [INFO] src.dca:   Δ Net Benefit: +0.0800 at threshold=0.250
+2025-11-16 17:02:14 [INFO] src.dca:   Assisted: 0.3229
+2025-11-16 17:02:14 [INFO] src.dca:   Unaided:  0.2430
+2025-11-16 17:02:14 [INFO] src.dca: 
+AI is better at threshold range: [0.050, 0.250]
+2025-11-16 17:02:14 [INFO] src.dca:   (50/50 thresholds, 100.0%)
+2025-11-16 17:02:14 [INFO] src.dca: ✓ JSON 저장: results/dca/Resident/dca_results.json
+2025-11-16 17:02:14 [INFO] src.dca: ✓ CSV 저장: results/dca/Resident/dca_curve.csv
+2025-11-16 17:02:14 [INFO] src.dca: ✓ Summary CSV 저장: results/dca/Resident/dca_summary.csv
+2025-11-16 17:02:14 [INFO] src.dca: ✓ Markdown 저장: results/dca/Resident/dca_report.md
+
+✓ Resident DCA 분석 완료!
+  결과 저장: results/dca/Resident/
+
+================================================================================
+[2] 전체 리더 DCA 결과 요약
+================================================================================
+
+[BCR]
+--------------------------------------------------------------------------------
+  Clinical Utility:
+    AI is better: 50/50 thresholds (100.0%)
+    Max Δ NB: +0.0187 at threshold=0.250
+
+  Net Benefit at Key Thresholds:
+    pt=0.05: Assisted=0.3424, Unaided=0.3368, Δ=+0.0056 (AI better)
+    pt=0.10: Assisted=0.3386, Unaided=0.3304, Δ=+0.0082 (AI better)
+    pt=0.15: Assisted=0.3344, Unaided=0.3232, Δ=+0.0112 (AI better)
+    pt=0.20: Assisted=0.3293, Unaided=0.3145, Δ=+0.0149 (AI better)
+    pt=0.25: Assisted=0.3240, Unaided=0.3053, Δ=+0.0187 (AI better)
+
+[EMS]
+--------------------------------------------------------------------------------
+  Clinical Utility:
+    AI is better: 50/50 thresholds (100.0%)
+    Max Δ NB: +0.0955 at threshold=0.250
+
+  Net Benefit at Key Thresholds:
+    pt=0.05: Assisted=0.3833, Unaided=0.3604, Δ=+0.0230 (AI better)
+    pt=0.10: Assisted=0.3734, Unaided=0.3356, Δ=+0.0378 (AI better)
+    pt=0.15: Assisted=0.3622, Unaided=0.3080, Δ=+0.0542 (AI better)
+    pt=0.20: Assisted=0.3486, Unaided=0.2742, Δ=+0.0744 (AI better)
+    pt=0.25: Assisted=0.3344, Unaided=0.2388, Δ=+0.0955 (AI better)
+
+[Resident]
+--------------------------------------------------------------------------------
+  Clinical Utility:
+    AI is better: 50/50 thresholds (100.0%)
+    Max Δ NB: +0.0800 at threshold=0.250
+
+  Net Benefit at Key Thresholds:
+    pt=0.05: Assisted=0.3448, Unaided=0.2981, Δ=+0.0467 (AI better)
+    pt=0.10: Assisted=0.3404, Unaided=0.2869, Δ=+0.0535 (AI better)
+    pt=0.15: Assisted=0.3354, Unaided=0.2743, Δ=+0.0611 (AI better)
+    pt=0.20: Assisted=0.3293, Unaided=0.2590, Δ=+0.0703 (AI better)
+    pt=0.25: Assisted=0.3229, Unaided=0.2430, Δ=+0.0800 (AI better)
+
+================================================================================
+DCA 분석 완료!
+================================================================================
+
+📊 주요 발견사항:
+  - Net Benefit: 진단의 이득 - 손해
+  - Threshold: 치료 선택 최소 확률 (0.05 ~ 0.25)
+  - Clinical utility: AI의 실제 임상적 유용성 평가
+  - 결과 저장: results/dca/
